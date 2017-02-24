@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Upcoming Events"
+        android:text="@string/upcoming_events"
         android:textSize="18sp"
         android:textAlignment="center" />
 
@@ -92,14 +92,14 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:text="WEB INFO"
+            android:text="@string/web_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button2Web"
             android:layout_weight="1" />
 
         <Button
-            android:text="ADD TO CALENDAR"
+            android:text="@string/add_to_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button2Calendar"
