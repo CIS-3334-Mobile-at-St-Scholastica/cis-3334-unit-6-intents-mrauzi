@@ -142,21 +142,21 @@
             android:text="Web Info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button5Web"
+            android:id="@+id/button3Web"
             android:layout_weight="1" />
 
         <Button
             android:text="Add to Calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button4Calendar"
+            android:id="@+id/button3Calendar"
             android:layout_weight="1" />
 
         <Button
             android:text="Map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button6Map"
+            android:id="@+id/button3Map"
             android:layout_weight="1" />
     </LinearLayout>
 

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Do something in response to button click
                 textViewStatus.setText("Code should display website for performance 1");
-                Uri webpage = Uri.parse("http://www.css.edu/about/spotlight-arts-and-lectures.html");
+                Uri webpage = Uri.parse("http://www.css.edu/about/spotlight-arts-and-lectures/calendar.html?trumbaEmbed=eventid%3d122420167%26view%3devent%26-childview%3d");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         btnChoirWeb.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 textViewStatus.setText("Code should display website for performance 2");
-                Uri webpage = Uri.parse("http://www.css.edu/about/spotlight-arts-and-lectures.html");
+                Uri webpage = Uri.parse("http://www.css.edu/about/spotlight-arts-and-lectures/calendar.html?trumbaEmbed=eventid%3d119980577%26view%3devent%26-childview%3d");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
@@ -130,6 +130,61 @@ public class MainActivity extends AppCompatActivity {
          */
         btnChoirMap = (Button)findViewById(R.id.button2Map);
         btnChoirMap.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                textViewStatus.setText("Code should display map for performance 1");
+                Uri uri = Uri.parse("geo:46.815402, -92.1077257");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        /**
+         *   Set up button click event listener for the web info button for the third performance
+         */
+        btnOrestesWeb = (Button)findViewById(R.id.button3Web);
+        btnOrestesWeb.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                textViewStatus.setText("Code should display website for performance 2");
+                Uri webpage = Uri.parse("http://www.css.edu/about/spotlight-arts-and-lectures/calendar.html?trumbaEmbed=eventid%3d119984642%26view%3devent%26-childview%3d");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        /**
+         * Set up button click event listener for the calendar button for the third performance
+         *       Use the calendar intent to set an event reminder on the calendar
+         */
+        btnOrestesCalendar = (Button)findViewById(R.id.button3Calendar);
+        btnOrestesCalendar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                textViewStatus.setText("Code should set a calendar event for performance 1");
+                Intent calIntent = new Intent(Intent.ACTION_INSERT);
+                calIntent.setType("vnd.android.cursor.item/event");
+                calIntent.putExtra(CalendarContract.Events.TITLE, "Orestes: Blood and Light");
+                calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "St. Scholastica Theatre");
+                GregorianCalendar begDate = new GregorianCalendar(2017, 3, 31, 19, 30);
+                GregorianCalendar endDate = new GregorianCalendar(2017, 2, 24, 21, 30);
+                calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                        begDate.getTimeInMillis());
+                calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                        endDate.getTimeInMillis());
+                startActivity(calIntent);
+
+            }
+        });
+
+        /**
+         * Set up button click event listener for the map button for the third performance
+         */
+        btnOrestesMap = (Button)findViewById(R.id.button3Map);
+        btnOrestesMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
                 textViewStatus.setText("Code should display map for performance 1");
